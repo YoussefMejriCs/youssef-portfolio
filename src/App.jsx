@@ -25,7 +25,8 @@ import {
   Terminal,
   Layers,
   FileSpreadsheet,
-  Quote
+  Quote,
+  ExternalLink
 } from 'lucide-react';
 
 // --- DATA & CONTENT CONFIGURATION ---
@@ -121,11 +122,15 @@ const SITE_DATA = {
         title: "Titanic Machine Learning",
         category: "Data Science",
         desc: {
-          en: "Basic analytics and survival prediction using Linear Regression and Scikit-learn.",
-          fr: "Analyses de base et prédiction de survie utilisant la régression linéaire et Scikit-learn.",
-          ar: "تحليلات أساسية وتنبؤ بالبقاء على قيد الحياة باستخدام الانحدار الخطي و Scikit-learn."
+          en: "Interactive Streamlit app for survival prediction using Scikit-learn. Explore the dataset and test the model live.",
+          fr: "Application Streamlit interactive pour la prédiction de survie. Explorez le jeu de données et testez le modèle en direct.",
+          ar: "تطبيق Streamlit تفاعلي للتنبؤ بالبقاء على قيد الحياة. استكشف البيانات واختبر النموذج مباشرة."
         },
-        tags: ["Scikit-learn", "Python", "Pandas"]
+        tags: ["Streamlit", "Scikit-learn", "Python"],
+        links: {
+            demo: "https://titanic-app-analyse.streamlit.app/",
+            repo: "https://github.com/YoussefMejriCs/titanic-app"
+        }
       },
       {
         title: "Goutina",
@@ -176,12 +181,12 @@ const SkillBar = ({ name, level, icon: Icon }) => (
   </div>
 );
 
-const ProjectCard = ({ title, category, desc, tags }) => (
-  <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-gray-100 dark:border-gray-700 flex flex-col h-full">
+const ProjectCard = ({ title, category, desc, tags, links }) => (
+  <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-gray-100 dark:border-gray-700 flex flex-col h-full group">
     <div className="flex justify-between items-start mb-4">
       <div>
         <span className="text-xs font-semibold text-teal-600 dark:text-teal-400 uppercase tracking-wider">{category}</span>
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-1">{title}</h3>
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-1 group-hover:text-teal-500 transition-colors">{title}</h3>
       </div>
       <div className="p-2 bg-gray-50 dark:bg-gray-700 rounded-full">
         <FolderOpen size={18} className="text-gray-600 dark:text-gray-300" />
@@ -190,6 +195,23 @@ const ProjectCard = ({ title, category, desc, tags }) => (
     <p className="text-gray-600 dark:text-gray-300 text-sm mb-6 flex-grow leading-relaxed">
       {desc}
     </p>
+    
+    {/* Buttons Section for Projects with Links */}
+    {links && (
+        <div className="flex flex-wrap gap-3 mb-6">
+            {links.demo && (
+                <a href={links.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold text-white bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 px-4 py-2 rounded-full transition-all shadow-lg shadow-teal-500/20 hover:shadow-teal-500/40 transform hover:-translate-y-0.5">
+                    <ExternalLink size={14} /> Live Demo
+                </a>
+            )}
+            {links.repo && (
+                <a href={links.repo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 px-4 py-2 rounded-full transition-colors border border-gray-200 dark:border-gray-600">
+                    <Github size={14} /> Code
+                </a>
+            )}
+        </div>
+    )}
+
     <div className="flex flex-wrap gap-2 mt-auto">
       {tags.map((tag, i) => (
         <span key={i} className="px-3 py-1 bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-300 text-xs rounded-full font-medium">
@@ -504,6 +526,7 @@ export default function Portfolio() {
                       category={project.category}
                       desc={project.desc[lang]}
                       tags={project.tags}
+                      links={project.links}
                     />
                   ))}
                 </div>
