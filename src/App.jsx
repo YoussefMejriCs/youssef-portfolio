@@ -68,6 +68,11 @@ const SITE_DATA = {
         أنا <span className="text-teal-600 dark:text-teal-400 font-bold">طالب علوم كمبيوتر</span> يقودني فضول لا هوادة فيه تجاه <span className="text-teal-600 dark:text-teal-400 font-bold">الذكاء الاصطناعي</span>، و<span className="text-teal-600 dark:text-teal-400 font-bold">تعلم الآلة</span>، و<span className="text-teal-600 dark:text-teal-400 font-bold">علم البيانات</span>. أفتخر بامتلاكي <span className="text-gray-800 dark:text-gray-100 font-semibold">انضباط ذاتي قوي</span> و<span className="text-gray-800 dark:text-gray-100 font-semibold">مهارات فعالة في حل المشكلات</span>. كل يوم هو فرصة للتعلم والبناء والتحسين في هذا المجال دائم التطور.
       </>
     },
+    // Updated Stats to reflect 4 projects
+    stats: [
+      { label: { en: "Projects", fr: "Projets", ar: "مشاريع" }, value: "4" },
+      { label: { en: "Certifications", fr: "Certificats", ar: "شهادات" }, value: "1" }
+    ],
     quote: {
       en: { text: "The goal is to turn data into information, and information into insight.", author: "Carly Fiorina" },
       fr: { text: "Le but est de transformer les données en informations, et les informations en connaissances.", author: "Carly Fiorina" },
@@ -118,6 +123,20 @@ const SITE_DATA = {
   },
   projects: {
     list: [
+      {
+        title: "House Price Prediction",
+        category: "Machine Learning",
+        desc: {
+          en: "Interactive app that predicts real estate prices based on features like area and location. Powered by a trained ML model.",
+          fr: "Application interactive qui prédit les prix de l'immobilier en fonction de critères. Propulsée par un modèle de ML entraîné.",
+          ar: "تطبيق تفاعلي يتنبأ بأسعار العقارات بناءً على ميزات مثل المساحة والموقع. مدعوم بنموذج تعلم آلي مدرب."
+        },
+        tags: ["Streamlit", "Scikit-learn", "Python"],
+        links: {
+            demo: "https://houseprice-application.streamlit.app/",
+            repo: "https://github.com/YoussefMejriCs/housePrice-app"
+        }
+      },
       {
         title: "Titanic Machine Learning",
         category: "Data Science",
