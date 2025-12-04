@@ -68,8 +68,9 @@ const SITE_DATA = {
       </>
     },
     quote: {
-      text: "The goal is to turn data into information, and information into insight.",
-      author: "Carly Fiorina"
+      en: { text: "The goal is to turn data into information, and information into insight.", author: "Carly Fiorina" },
+      fr: { text: "Le but est de transformer les données en informations, et les informations en connaissances.", author: "Carly Fiorina" },
+      ar: { text: "الهدف هو تحويل البيانات إلى معلومات، والمعلومات إلى رؤية.", author: "كارلي فيورينا" }
     }
   },
   resume: {
@@ -393,13 +394,16 @@ export default function Portfolio() {
                     {SITE_DATA.about.bio[lang]}
                   </p>
 
-                  {/* Quote - Subtle and smaller */}
-                  <div className="inline-block mt-4 px-6 py-3 bg-teal-50 dark:bg-teal-900/10 border border-teal-100 dark:border-teal-800/30 rounded-full">
-                      <p className="text-sm md:text-base font-medium text-gray-500 dark:text-gray-400 flex items-center gap-2 justify-center">
-                        <Quote size={16} className="text-teal-500" />
-                        <span className="italic">"{SITE_DATA.about.quote.text}"</span>
-                        <span className="text-teal-600 dark:text-teal-400 font-bold ml-1">— {SITE_DATA.about.quote.author}</span>
-                      </p>
+                  {/* Quote - Vertical Stack for Better Mobile Display */}
+                  <div className="inline-flex flex-col items-center gap-3 mt-4 px-8 py-6 bg-teal-50 dark:bg-teal-900/10 border border-teal-100 dark:border-teal-800/30 rounded-2xl max-w-lg mx-auto">
+                        <Quote size={24} className="text-teal-500 mb-1" />
+                        <p className="text-base md:text-lg font-medium text-gray-600 dark:text-gray-300 italic leading-relaxed">
+                          "{SITE_DATA.about.quote[lang].text}"
+                        </p>
+                        <div className="w-10 h-1 bg-teal-500/20 rounded-full my-1"></div>
+                        <p className="text-sm font-bold text-teal-600 dark:text-teal-400 uppercase tracking-wider">
+                          {SITE_DATA.about.quote[lang].author}
+                        </p>
                   </div>
                 </div>
               </div>
@@ -407,7 +411,7 @@ export default function Portfolio() {
 
             {/* --- RESUME TAB --- */}
             {activeTab === 'resume' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 animate-fadeIn">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 animate-fadeIn min-h-full">
                 
                 {/* Left Column: Education & Experience */}
                 <div className="space-y-10">
@@ -485,7 +489,7 @@ export default function Portfolio() {
 
             {/* --- PROJECTS TAB --- */}
             {activeTab === 'projects' && (
-              <div className="animate-fadeIn h-full">
+              <div className="animate-fadeIn min-h-full">
                 <div className="flex justify-between items-end mb-8">
                   <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                      {SITE_DATA.nav.projects[lang]}
