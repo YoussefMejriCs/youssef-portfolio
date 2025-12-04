@@ -370,12 +370,12 @@ export default function Portfolio() {
 
         {/* --- MAIN CONTENT AREA --- */}
         <main className="flex-grow bg-white dark:bg-gray-800 rounded-t-3xl md:rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden relative h-[calc(100vh-5rem)] md:h-[calc(100vh-7rem)]">
-          {/* Added pb-24 for mobile to clear bottom nav */}
-          <div className="h-full overflow-y-auto p-6 md:p-10 scrollbar-hide pb-24 md:pb-10">
+          {/* Increased pb-32 for mobile to clear bottom nav comfortably */}
+          <div className="h-full overflow-y-auto p-6 md:p-10 scrollbar-hide pb-32 md:pb-10">
             
             {/* --- ABOUT TAB --- */}
             {activeTab === 'about' && (
-              <div className="animate-fadeIn h-full flex flex-col items-center justify-center relative overflow-hidden text-center">
+              <div className="animate-fadeIn min-h-full flex flex-col items-center justify-center relative overflow-hidden text-center py-12 md:py-0">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none">
                     <div className="absolute inset-0 bg-[radial-gradient(#38b2ac_1px,transparent_1px)] [background-size:20px_20px]"></div>
@@ -383,12 +383,12 @@ export default function Portfolio() {
 
                 {/* Content */}
                 <div className="max-w-4xl relative z-10 px-6">
-                  {/* Name / Heading - Made larger and more central */}
+                  {/* Name / Heading */}
                   <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
                     {SITE_DATA.about.heading[lang]} <span className="text-teal-500">.</span>
                   </h1>
                   
-                  {/* Bio - High readability */}
+                  {/* Bio */}
                   <p className="text-lg md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed mb-10 max-w-2xl mx-auto font-light">
                     {SITE_DATA.about.bio[lang]}
                   </p>
