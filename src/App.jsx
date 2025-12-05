@@ -30,7 +30,6 @@ import {
 } from 'lucide-react';
 
 // --- DATA & CONTENT CONFIGURATION ---
-// EDIT THIS SECTION TO UPDATE YOUR CONTENT
 const SITE_DATA = {
   personal: {
     name: "Youssef Mejri",
@@ -46,7 +45,8 @@ const SITE_DATA = {
       linkedin: "https://www.linkedin.com/in/youssef-mejri-cs/",
       github: "https://github.com/YoussefMejriCs"
     },
-    resumeUrl: "/resume.pdf" // Ensure you put your PDF file in the public folder with this name
+    resumeUrl: "/resume.pdf",
+    profileUrl: "/profile.jpg" // Place your image named 'profile.jpg' in the public folder
   },
   nav: {
     about: { en: "About", fr: "À propos", ar: "حول" },
@@ -96,9 +96,9 @@ const SITE_DATA = {
         role: "Web Developer (React.js)",
         company: "Bmerce",
         desc: {
-          en: "Developed and improved user interfaces for web applications using JavaScript and React.js.",
-          fr: "Développement et amélioration des interfaces utilisateur pour les applications web en utilisant JavaScript et React.js.",
-          ar: "تطوير وتحسين واجهات المستخدم لتطبيقات الويب باستخدام JavaScript و React.js."
+          en: "Developed and improved user interfaces. Designed responsive pages and optimized performance.",
+          fr: "Développement et amélioration des interfaces utilisateur. Conception de pages responsives et optimisation des performances.",
+          ar: "تطوير وتحسين واجهات المستخدم. تصميم صفحات متجاوبة وتحسين الأداء."
         }
       },
       {
@@ -116,7 +116,6 @@ const SITE_DATA = {
       { name: "ML Basics (Scikit-Learn)", icon: Brain, level: 80 },
       { name: "Data Cleaning (Pandas)", icon: FileSpreadsheet, level: 85 },
       { name: "Data Visualization", icon: LineChart, level: 75 },
-      { name: "TensorFlow (Learning)", icon: Layers, level: 40 },
       { name: "React.js", icon: Code, level: 85 },
       { name: "UI/UX (Figma)", icon: Palette, level: 70 }
     ]
@@ -309,8 +308,18 @@ export default function Portfolio() {
       {/* --- TOP BAR (Mobile & Desktop Controls) --- */}
       <div className="fixed top-0 left-0 right-0 h-16 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 px-6 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
         <div className="font-bold text-xl tracking-tight flex items-center gap-2">
-          <div className="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center text-white font-bold">
-            <Brain size={20} className="text-white" />
+          {/* MOBILE TOP BAR IMAGE */}
+          <div className="w-8 h-8 rounded-lg overflow-hidden border border-teal-500 shadow-sm flex items-center justify-center bg-teal-100">
+             <img 
+               src={SITE_DATA.personal.profileUrl} 
+               alt="Y"
+               className="w-full h-full object-cover"
+               onError={(e) => {
+                 e.target.onerror = null; 
+                 e.target.style.display = 'none';
+                 e.target.parentElement.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-teal-600"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>';
+               }}
+             />
           </div>
           <span className="hidden sm:inline">Youssef.</span>
         </div>
@@ -355,8 +364,18 @@ export default function Portfolio() {
         {/* --- SIDEBAR / NAVIGATION (Desktop) --- */}
         <aside className="hidden md:flex flex-col w-64 bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden shrink-0 h-[calc(100vh-7rem)]">
           <div className="p-8 text-center border-b border-gray-100 dark:border-gray-700 bg-gradient-to-b from-teal-50/50 to-transparent dark:from-teal-900/10">
-            <div className="w-24 h-24 mx-auto bg-gray-200 dark:bg-gray-700 rounded-full mb-4 overflow-hidden border-4 border-white dark:border-gray-600 shadow-md flex items-center justify-center">
-              <User size={40} className="text-gray-400" />
+            {/* DESKTOP SIDEBAR IMAGE */}
+            <div className="w-24 h-24 mx-auto bg-white dark:bg-gray-700 rounded-full mb-4 overflow-hidden border-4 border-white dark:border-gray-600 shadow-lg flex items-center justify-center">
+               <img 
+                 src={SITE_DATA.personal.profileUrl} 
+                 alt="Youssef"
+                 className="w-full h-full object-cover"
+                 onError={(e) => {
+                   e.target.onerror = null; 
+                   e.target.style.display = 'none';
+                   e.target.parentElement.innerHTML = '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>';
+                 }}
+               />
             </div>
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">{SITE_DATA.personal.name}</h2>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wide">CS Student</p>
