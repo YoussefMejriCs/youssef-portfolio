@@ -96,9 +96,9 @@ const SITE_DATA = {
         role: "Web Developer (React.js)",
         company: "Bmerce",
         desc: {
-          en: "Developed and improved user interfaces. Designed responsive pages and optimized performance.",
-          fr: "Développement et amélioration des interfaces utilisateur. Conception de pages responsives et optimisation des performances.",
-          ar: "تطوير وتحسين واجهات المستخدم. تصميم صفحات متجاوبة وتحسين الأداء."
+          en: "Developed and improved user interfaces for web applications using JavaScript and React.js.",
+          fr: "Développement et amélioration des interfaces utilisateur pour les applications web en utilisant JavaScript et React.js.",
+          ar: "تطوير وتحسين واجهات المستخدم لتطبيقات الويب باستخدام JavaScript و React.js."
         }
       },
       {
@@ -114,9 +114,10 @@ const SITE_DATA = {
     ],
     skills: [
       { name: "ML Basics (Scikit-Learn)", icon: Brain, level: 80 },
+      { name: "PyTorch & TensorFlow", icon: Layers, level: 50 },
       { name: "Data Cleaning (Pandas)", icon: FileSpreadsheet, level: 85 },
       { name: "Data Visualization", icon: LineChart, level: 75 },
-      { name: "TensorFlow (Learning)", icon: Layers, level: 40 },
+      { name: "SQL & MySQL", icon: Database, level: 70 },
       { name: "React.js", icon: Code, level: 85 },
       { name: "UI/UX (Figma)", icon: Palette, level: 70 }
     ]
@@ -138,8 +139,8 @@ const SITE_DATA = {
         }
       },
       {
-        title: "Titanic Machine Learning",
-        category: "Data Science",
+        title: "Titanic Survival Prediction",
+        category: "ML & Data Science",
         desc: {
           en: "Interactive Streamlit app for survival prediction using Scikit-learn. Explore the dataset and test the model live.",
           fr: "Application Streamlit interactive pour la prédiction de survie. Explorez le jeu de données et testez le modèle en direct.",
@@ -176,7 +177,7 @@ const SITE_DATA = {
   languages: [
     { name: { en: "Arabic", fr: "Arabe", ar: "العربية" }, level: "Native" },
     { name: { en: "English", fr: "Anglais", ar: "الإنجليزية" }, level: "C1/Advanced" },
-    { name: { en: "French", fr: "Français", ar: "الفرنسية" }, level: "A2/Basic" }
+    { name: { en: "French", fr: "Français", ar: "الفرنسية" }, level: "B1/Intermediate" }
   ]
 };
 
