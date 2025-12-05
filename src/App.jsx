@@ -114,10 +114,9 @@ const SITE_DATA = {
     ],
     skills: [
       { name: "ML Basics (Scikit-Learn)", icon: Brain, level: 80 },
-      { name: "PyTorch & TensorFlow", icon: Layers, level: 50 },
       { name: "Data Cleaning (Pandas)", icon: FileSpreadsheet, level: 85 },
       { name: "Data Visualization", icon: LineChart, level: 75 },
-      { name: "SQL & MySQL", icon: Database, level: 70 },
+      { name: "TensorFlow (Learning)", icon: Layers, level: 40 },
       { name: "React.js", icon: Code, level: 85 },
       { name: "UI/UX (Figma)", icon: Palette, level: 70 }
     ]
@@ -260,6 +259,11 @@ export default function Portfolio() {
   const [lang, setLang] = useState('en'); // 'en', 'fr', 'ar'
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [copiedField, setCopiedField] = useState(null);
+
+  // Handle Page Title
+  useEffect(() => {
+    document.title = "Youssef Mejri | AI & Data Science Portfolio";
+  }, []);
 
   // Handle Dark Mode
   useEffect(() => {
