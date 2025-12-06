@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 
 // --- DATA & CONTENT CONFIGURATION ---
+// EDIT THIS SECTION TO UPDATE YOUR CONTENT
 const SITE_DATA = {
   personal: {
     name: "Youssef Mejri",
@@ -38,6 +39,13 @@ const SITE_DATA = {
       fr: "Étudiant en Informatique & Passionné d'IA",
       ar: "طالب علوم الكمبيوتر وشغوف بالذكاء الاصطناعي"
     },
+    roles: [
+        "CS Student",
+        "AI Enthusiast",
+        "ML Practitioner",
+        "Data Science Student",
+        "Problem Solver"
+    ],
     location: "Tunisia (Mahdia / Tunis / Online)",
     email: "youssef.mejri.cs@gmail.com",
     phone: "(+216) 50 453 818",
@@ -96,9 +104,9 @@ const SITE_DATA = {
         role: "Web Developer (React.js)",
         company: "Bmerce",
         desc: {
-          en: "Developed and improved user interfaces. Designed responsive pages and optimized performance.",
-          fr: "Développement et amélioration des interfaces utilisateur. Conception de pages responsives et optimisation des performances.",
-          ar: "تطوير وتحسين واجهات المستخدم. تصميم صفحات متجاوبة وتحسين الأداء."
+          en: "Developed and improved user interfaces for web applications using JavaScript and React.js.",
+          fr: "Développement et amélioration des interfaces utilisateur pour les applications web en utilisant JavaScript et React.js.",
+          ar: "تطوير وتحسين واجهات المستخدم لتطبيقات الويب باستخدام JavaScript و React.js."
         }
       },
       {
@@ -258,6 +266,7 @@ export default function Portfolio() {
   const [lang, setLang] = useState('en'); // 'en', 'fr', 'ar'
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [copiedField, setCopiedField] = useState(null);
+  const [roleIndex, setRoleIndex] = useState(0);
 
   // Handle Page Title
   useEffect(() => {
@@ -272,6 +281,14 @@ export default function Portfolio() {
       document.documentElement.classList.remove('dark');
     }
   }, [darkMode]);
+
+  // Handle Role Rotation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % SITE_DATA.personal.roles.length);
+    }, 3000); // Change role every 3 seconds
+    return () => clearInterval(interval);
+  }, []);
 
   // Handle Text Direction
   const isRTL = lang === 'ar';
@@ -308,19 +325,7 @@ export default function Portfolio() {
       {/* --- TOP BAR (Mobile & Desktop Controls) --- */}
       <div className="fixed top-0 left-0 right-0 h-16 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 px-6 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
         <div className="font-bold text-xl tracking-tight flex items-center gap-2">
-          {/* MOBILE TOP BAR IMAGE */}
-          <div className="w-8 h-8 rounded-lg overflow-hidden border border-teal-500 shadow-sm flex items-center justify-center bg-teal-100">
-             <img 
-               src={SITE_DATA.personal.profileUrl} 
-               alt="Y"
-               className="w-full h-full object-cover"
-               onError={(e) => {
-                 e.target.onerror = null; 
-                 e.target.style.display = 'none';
-                 e.target.parentElement.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-teal-600"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>';
-               }}
-             />
-          </div>
+          {/* REMOVED LOGO ICON, NOW JUST TEXT */}
           <span className="hidden sm:inline">Youssef.</span>
         </div>
 
@@ -378,7 +383,10 @@ export default function Portfolio() {
                />
             </div>
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">{SITE_DATA.personal.name}</h2>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wide">CS Student</p>
+            {/* DYNAMIC ROLE TEXT */}
+            <p className="text-xs text-teal-600 dark:text-teal-400 mt-1 uppercase tracking-wide font-semibold min-h-[1.5em] transition-opacity duration-300">
+                {SITE_DATA.personal.roles[roleIndex]}
+            </p>
           </div>
           
           <nav className="flex-grow p-4 space-y-2 overflow-y-auto">
