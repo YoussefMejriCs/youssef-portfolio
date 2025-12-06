@@ -1,17 +1,14 @@
-<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <!-- Define the circle shape -->
-    <clipPath id="circle-crop">
-      <circle cx="32" cy="32" r="32" />
-    </clipPath>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Teal Circle Background -->
+  <circle cx="32" cy="32" r="32" fill="#0d9488" />
   
-  <!-- Load the image and apply the circle shape -->
-  <image
-    href="profile.jpg" 
-    x="0" y="0" 
-    width="64" height="64"
-    preserveAspectRatio="xMidYMid slice"
-    clip-path="url(#circle-crop)"
-  />
+  <!-- The Letter Y -->
+  <text x="32" y="44" 
+        font-family="Arial, sans-serif" 
+        font-weight="bold" 
+        font-size="34" 
+        text-anchor="middle" 
+        fill="white">
+    Y
+  </text>
 </svg>
