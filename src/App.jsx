@@ -76,9 +76,9 @@ const SITE_DATA = {
         أنا <span className="text-teal-600 dark:text-teal-400 font-bold">طالب علوم كمبيوتر</span> يقودني فضول لا هوادة فيه تجاه <span className="text-teal-600 dark:text-teal-400 font-bold">الذكاء الاصطناعي</span>، و<span className="text-teal-600 dark:text-teal-400 font-bold">تعلم الآلة</span>، و<span className="text-teal-600 dark:text-teal-400 font-bold">علم البيانات</span>. أفتخر بامتلاكي <span className="text-gray-800 dark:text-gray-100 font-semibold">انضباط ذاتي قوي</span> و<span className="text-gray-800 dark:text-gray-100 font-semibold">مهارات فعالة في حل المشكلات</span>. كل يوم هو فرصة للتعلم والبناء والتحسين في هذا المجال دائم التطور.
       </>
     },
-    // Updated Stats to reflect 5 projects
+    // Updated Stats to reflect 7 projects
     stats: [
-      { label: { en: "Projects", fr: "Projets", ar: "مشاريع" }, value: "5" },
+      { label: { en: "Projects", fr: "Projets", ar: "مشاريع" }, value: "7" },
       { label: { en: "Certifications", fr: "Certificats", ar: "شهادات" }, value: "1" }
     ],
     quote: {
@@ -131,11 +131,39 @@ const SITE_DATA = {
   projects: {
     list: [
       {
+        title: "Video Game Sales Predictor",
+        category: "Advanced Machine Learning",
+        desc: {
+          en: "Developed a predictive model to forecast video game sales based on genre, platform, and critic scores. Demonstrates advanced regression and feature engineering techniques.",
+          fr: "Développement d'un modèle prédictif pour les ventes de jeux vidéo basé sur le genre et les notes des critiques. Démontre des techniques avancées de régression.",
+          ar: "تطوير نموذج تنبؤي لمبيعات ألعاب الفيديو بناءً على النوع والمنصة وتقييمات النقاد. يعرض تقنيات انحدار متقدمة."
+        },
+        tags: ["ML", "Regression", "Feature Engineering", "Python"],
+        links: {
+            demo: "https://video-game-sales-predictor.streamlit.app/",
+            repo: "https://github.com/YoussefMejriCs/video-game-sales-predictor"
+        }
+      },
+      {
+        title: "Global Wealth Report Analysis",
+        category: "Data Analysis & Visualization",
+        desc: {
+          en: "Comprehensive analysis and visualization of global billionaire data (The Global Wealth Report). Exploring trends, sectors, and geographical distribution of extreme wealth.",
+          fr: "Analyse et visualisation complètes des données sur les milliardaires mondiaux (Global Wealth Report). Exploration des tendances géographiques et sectorielles.",
+          ar: "تحليل وتصور شامل لبيانات المليارديرات العالمية (تقرير الثروة العالمية). استكشاف الاتجاهات والقطاعات والتوزيع الجغرافي للثروات."
+        },
+        tags: ["Data Mining", "Plotly", "Pandas", "Streamlit"],
+        links: {
+            demo: "https://billionaires-analysis.streamlit.app/",
+            repo: "https://github.com/YoussefMejriCs/billionaires-analysis"
+        }
+      },
+      {
         title: "Iris Classification Advanced",
         category: "Machine Learning",
         desc: {
           en: "Advanced classification of Iris flower species using ML algorithms. Interactive dashboard to visualize features and prediction results.",
-          fr: "Classification avancée des espèces de fleurs d'Iris à l'aide d'algorithmes de ML. Tableau de bord interactif pour visualiser les données.",
+          fr: "Classification avancée des espèces de fleurs d'Iris à l'aide d'algorithmes de ML. Tableau de bord interactif لتصور les données.",
           ar: "تصنيف متقدم لأنواع زهرة السوسن باستخدام خوارزميات التعلم الآلي. لوحة تحكم تفاعلية لتصور البيانات ونتائج التنبؤ."
         },
         tags: ["Streamlit", "Scikit-learn", "Python"],
@@ -432,8 +460,8 @@ export default function Portfolio() {
           </div>
 
           <div className="p-6 border-t border-gray-100 dark:border-gray-700 flex justify-center gap-4 text-gray-400">
-            <a href={SITE_DATA.personal.social.github} target="_blank" rel="noopener noreferrer" className="hover:text-teal-500 transition-colors"><Github size={20} /></a>
             <a href={SITE_DATA.personal.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-teal-500 transition-colors"><Linkedin size={20} /></a>
+            <a href={SITE_DATA.personal.social.github} target="_blank" rel="noopener noreferrer" className="hover:text-teal-500 transition-colors"><Github size={20} /></a>
             <a href={`mailto:${SITE_DATA.personal.email}`} className="hover:text-teal-500 transition-colors"><Mail size={20} /></a>
           </div>
         </aside>
