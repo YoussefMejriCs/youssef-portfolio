@@ -76,9 +76,9 @@ const SITE_DATA = {
         أنا <span className="text-teal-600 dark:text-teal-400 font-bold">طالب علوم كمبيوتر</span> يقودني فضول لا هوادة فيه تجاه <span className="text-teal-600 dark:text-teal-400 font-bold">الذكاء الاصطناعي</span>، و<span className="text-teal-600 dark:text-teal-400 font-bold">تعلم الآلة</span>، و<span className="text-teal-600 dark:text-teal-400 font-bold">علم البيانات</span>. أفتخر بامتلاكي <span className="text-gray-800 dark:text-gray-100 font-semibold">انضباط ذاتي قوي</span> و<span className="text-gray-800 dark:text-gray-100 font-semibold">مهارات فعالة في حل المشكلات</span>. كل يوم هو فرصة للتعلم والبناء والتحسين في هذا المجال دائم التطور.
       </>
     },
-    // Updated Stats to reflect 4 projects
+    // Updated Stats to reflect 5 projects
     stats: [
-      { label: { en: "Projects", fr: "Projets", ar: "مشاريع" }, value: "4" },
+      { label: { en: "Projects", fr: "Projets", ar: "مشاريع" }, value: "5" },
       { label: { en: "Certifications", fr: "Certificats", ar: "شهادات" }, value: "1" }
     ],
     quote: {
@@ -130,6 +130,20 @@ const SITE_DATA = {
   },
   projects: {
     list: [
+      {
+        title: "Iris Classification Advanced",
+        category: "Machine Learning",
+        desc: {
+          en: "Advanced classification of Iris flower species using ML algorithms. Interactive dashboard to visualize features and prediction results.",
+          fr: "Classification avancée des espèces de fleurs d'Iris à l'aide d'algorithmes de ML. Tableau de bord interactif pour visualiser les données.",
+          ar: "تصنيف متقدم لأنواع زهرة السوسن باستخدام خوارزميات التعلم الآلي. لوحة تحكم تفاعلية لتصور البيانات ونتائج التنبؤ."
+        },
+        tags: ["Streamlit", "Scikit-learn", "Python"],
+        links: {
+            demo: "https://iris-classifier-advanced.streamlit.app/",
+            repo: "https://github.com/YoussefMejriCs/iris-classifier-advanced"
+        }
+      },
       {
         title: "House Price Prediction",
         category: "Machine Learning",
@@ -325,7 +339,7 @@ export default function Portfolio() {
       {/* --- TOP BAR (Mobile & Desktop Controls) --- */}
       <div className="fixed top-0 left-0 right-0 h-16 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 px-6 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
         <div className="font-bold text-xl tracking-tight flex items-center gap-2">
-          {/* REMOVED LOGO ICON, NOW JUST TEXT */}
+          {/* JUST TEXT, NO IMAGE */}
           <span className="hidden sm:inline">Youssef.</span>
         </div>
 
@@ -369,7 +383,7 @@ export default function Portfolio() {
         {/* --- SIDEBAR / NAVIGATION (Desktop) --- */}
         <aside className="hidden md:flex flex-col w-64 bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden shrink-0 h-[calc(100vh-7rem)]">
           <div className="p-8 text-center border-b border-gray-100 dark:border-gray-700 bg-gradient-to-b from-teal-50/50 to-transparent dark:from-teal-900/10">
-            {/* DESKTOP SIDEBAR IMAGE */}
+            {/* DESKTOP SIDEBAR IMAGE (Restored) */}
             <div className="w-24 h-24 mx-auto bg-white dark:bg-gray-700 rounded-full mb-4 overflow-hidden border-4 border-white dark:border-gray-600 shadow-lg flex items-center justify-center">
                <img 
                  src={SITE_DATA.personal.profileUrl} 
@@ -382,9 +396,9 @@ export default function Portfolio() {
                  }}
                />
             </div>
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">{SITE_DATA.personal.name}</h2>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mt-4">{SITE_DATA.personal.name}</h2>
             {/* DYNAMIC ROLE TEXT */}
-            <p className="text-xs text-teal-600 dark:text-teal-400 mt-1 uppercase tracking-wide font-semibold min-h-[1.5em] transition-opacity duration-300">
+            <p className="text-xs text-teal-600 dark:text-teal-400 mt-2 uppercase tracking-wide font-semibold min-h-[1.5em] transition-opacity duration-300">
                 {SITE_DATA.personal.roles[roleIndex]}
             </p>
           </div>
