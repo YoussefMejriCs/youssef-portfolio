@@ -428,6 +428,29 @@ img {
   transform: translateY(-2px);
 }
 
+.hero-cv {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.hero-cv-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.hero-cv .btn-outline {
+  padding: 8px 18px;
+  font-size: 0.82rem;
+}
+
+.hero-cv .btn-outline i {
+  font-size: 0.85rem;
+}
+
 .hero-social {
   display: flex;
   gap: 16px;
