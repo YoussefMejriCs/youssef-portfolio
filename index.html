@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Youssef Mejri — Full-Stack Developer & Future AI Engineer. React, Django REST, PostgreSQL, FastAPI, LangChain.">
+  <meta name="keywords" content="Youssef Mejri, Full-Stack Developer, AI Engineer, React, Django, Python, Tunisia">
+  <meta name="author" content="Youssef Mejri">
+  <title>Youssef Mejri | Full-Stack Developer & AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="#home" class="nav-logo" aria-label="Youssef Mejri home">
+        <div class="nav-rotating-text">
+          <span>Youssef Mejri</span>
+          <span>Full-Stack Developer</span>
+          <span>Future AI Engineer</span>
+          <span>Python Developer</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home" data-i18n="nav-home">Home</a></li>
+        <li><a href="#about" data-i18n="nav-about">About</a></li>
+        <li><a href="#skills" data-i18n="nav-skills">Skills</a></li>
+        <li><a href="#projects" data-i18n="nav-projects">Projects</a></li>
+        <li><a href="#certifications" data-i18n="nav-certifications">Certifications</a></li>
+        <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
+        <li><button class="lang-toggle" id="lang-toggle" onclick="toggleLanguage()" data-i18n="lang-btn" aria-label="Toggle language">FR</button></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" role="dialog" aria-label="Mobile navigation">
+    <a href="#home" data-i18n="nav-home">Home</a>
+    <a href="#about" data-i18n="nav-about">About</a>
+    <a href="#skills" data-i18n="nav-skills">Skills</a>
+    <a href="#projects" data-i18n="nav-projects">Projects</a>
+    <a href="#certifications" data-i18n="nav-certifications">Certifications</a>
+    <a href="#contact" data-i18n="nav-contact">Contact</a>
+    <button class="lang-toggle" id="lang-toggle-mobile" onclick="toggleLanguage()" data-i18n="lang-btn" aria-label="Toggle language">FR</button>
+  </div>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-split">
+        <div class="hero-image fade-in">
+          <img src="assets/images/me.png" alt="Youssef Mejri">
+        </div>
+        <div class="hero-content">
+          <div class="hero-badge fade-in">
+            <i class="fas fa-map-pin"></i>
+            <span>Tunisia (Tunis / Online)</span>
+          </div>
+          <h1 class="hero-name fade-in">
+            <span data-i18n="hero-name">Youssef </span><span data-i18n="hero-name-accent" style="color: var(--accent);">Mejri</span>
+          </h1>
+          <p class="hero-title fade-in" data-i18n="hero-title">Full-Stack Developer &mdash; Future AI Engineer</p>
+          <p class="hero-description fade-in" data-i18n="hero-desc">Building production-ready full-stack applications with React, Django REST Framework, and PostgreSQL, while actively expanding into AI engineering with FastAPI, LangChain, and RAG systems.</p>
+          <div class="hero-actions fade-in">
+            <a href="#projects" class="btn btn-primary" data-i18n="hero-cta-primary">View Projects</a>
+            <a href="#contact" class="btn btn-secondary" data-i18n="hero-cta-secondary">Get in Touch</a>
+          </div>
+          <div class="hero-social fade-in">
+            <a href="https://github.com/YoussefMejriCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/youssef-mejri-cs" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:youssef.mejri.cs@gmail.com" aria-label="Send email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label" data-i18n="section-about-label">About</span>
+        <h2 class="section-title" data-i18n="section-about-title">Background &amp; Focus</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <p data-i18n="about-p1">Computer Science graduate with hands-on experience delivering production-ready applications across the full stack. Passionate about AI, machine learning, and building systems that solve real problems.</p>
+          <p data-i18n="about-p2">Currently completing a self-directed AI engineering sprint covering <strong>FastAPI, LangChain, Hugging Face, RAG, and ChromaDB</strong>, building on the DataCamp Associate AI Engineer track. This active learning phase drives my project work and technical growth.</p>
+        </div>
+        <div class="about-meta">
+          <!-- Education -->
+          <div class="about-card fade-in">
+            <div class="about-card-header">
+              <i class="fas fa-graduation-cap"></i>
+              <h3 data-i18n="about-card-edu-title">Education</h3>
+            </div>
+            <p><strong data-i18n="about-card-edu">Higher Institute of Computer Science (ISIMA) &ndash; Mahdia</strong></p>
+            <p data-i18n="about-card-edu-detail">Bachelor's in Computer Science, 2023&ndash;2026</p>
+            <ul>
+              <li data-i18n="about-card-edu-coursework">Software Engineering, Algorithms, Data Structures, Databases, AI Fundamentals</li>
+            </ul>
+          </div>
+          <!-- Experience -->
+          <div class="about-card fade-in">
+            <div class="about-card-header">
+              <i class="fas fa-briefcase"></i>
+              <h3 data-i18n="about-card-exp-title">Experience</h3>
+            </div>
+            <p data-i18n="about-exp1">COFAT (Automotive Wiring) &mdash; Full-Stack Developer Intern, 2025&ndash;2026. Built COFAT-PMS, a production &amp; quality management system. React, Django REST, PostgreSQL, JWT. Delivered across 6 Agile sprints.</p>
+            <p data-i18n="about-exp2">Bmerce &mdash; Web Developer (React.js), 2024. Developed UIs for web applications using JavaScript and React.js.</p>
+          </div>
+          <!-- Volunteering -->
+          <div class="about-card fade-in">
+            <div class="about-card-header">
+              <i class="fas fa-hands-helping"></i>
+              <h3 data-i18n="about-card-vol-title">Volunteering</h3>
+            </div>
+            <p data-i18n="about-vol">Organization Dept Member, Microsoft ISIMa Club, 2024 &mdash; planned and managed events on AI, Data Science, and Soft Skills.</p>
+          </div>
+          <!-- Languages -->
+          <div class="about-card fade-in">
+            <div class="about-card-header">
+              <i class="fas fa-language"></i>
+              <h3 data-i18n="about-lang-title">Languages</h3>
+            </div>
+            <ul>
+              <li data-i18n="about-lang-ar">Arabic (Native)</li>
+              <li data-i18n="about-lang-en">English (C1)</li>
+              <li data-i18n="about-lang-fr">French (B1)</li>
+              <li data-i18n="about-lang-de">German (A1)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label" data-i18n="section-skills-label">Skills</span>
+        <h2 class="section-title" data-i18n="section-skills-title">Technical Arsenal</h2>
+      </div>
+      <div class="skills-grid">
+        <!-- Backend & AI -->
+        <div class="skill-category fade-in">
+          <h3><i class="fas fa-server"></i> <span data-i18n="skill-backend">Backend &amp; AI</span></h3>
+          <div class="skill-tags">
+            <span class="skill-tag core">Python</span>
+            <span class="skill-tag core">FastAPI</span>
+            <span class="skill-tag core">Django REST Framework</span>
+            <span class="skill-tag learning">LangChain</span>
+            <span class="skill-tag learning">Hugging Face</span>
+            <span class="skill-tag learning">RAG / ChromaDB</span>
+            <span class="skill-tag core">PostgreSQL</span>
+            <span class="skill-tag">JWT Authentication</span>
+          </div>
+        </div>
+        <!-- Web Development -->
+        <div class="skill-category fade-in">
+          <h3><i class="fas fa-code"></i> <span data-i18n="skill-web">Web Development</span></h3>
+          <div class="skill-tags">
+            <span class="skill-tag core">React.js</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">HTML / CSS</span>
+          </div>
+        </div>
+        <!-- Data Science & ML -->
+        <div class="skill-category fade-in">
+          <h3><i class="fas fa-chart-line"></i> <span data-i18n="skill-ds">Data Science &amp; ML</span></h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Scikit-Learn</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag learning">PyTorch</span>
+            <span class="skill-tag learning">TensorFlow</span>
+            <span class="skill-tag">Data Cleaning &amp; Visualization</span>
+          </div>
+        </div>
+        <!-- AI Tools -->
+        <div class="skill-category fade-in">
+          <h3><i class="fas fa-robot"></i> <span data-i18n="skill-ai-tools">AI Tools (Workflow)</span></h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Claude AI</span>
+            <span class="skill-tag">ChatGPT</span>
+            <span class="skill-tag">Gemini</span>
+            <span class="skill-tag">Zed AI</span>
+            <span class="skill-tag">OpenCode</span>
+          </div>
+        </div>
+        <!-- Dev Tools -->
+        <div class="skill-category fade-in">
+          <h3><i class="fas fa-tools"></i> <span data-i18n="skill-dev">Dev Tools</span></h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Terminal / CLI</span>
+            <span class="skill-tag">Postman</span>
+          </div>
+        </div>
+        <!-- Design & Database -->
+        <div class="skill-category fade-in">
+          <h3><i class="fas fa-palette"></i> <span data-i18n="skill-design">Design &amp; Database</span></h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Canva</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">MongoDB</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label" data-i18n="section-projects-label">Projects</span>
+        <h2 class="section-title" data-i18n="section-projects-title">Featured Work</h2>
+      </div>
+      <div class="projects-grid">
+
+        <!-- COFAT-PMS (Featured / Flagship) -->
+        <div class="project-card featured fade-in">
+          <div class="project-badges">
+            <span class="project-badge private" data-i18n="proj-badge-private">Private Repo</span>
+          </div>
+          <h3 data-i18n="proj-1-title">COFAT-PMS &mdash; Factory Production &amp; Quality Management System</h3>
+          <p data-i18n="proj-1-desc">Full-stack web app for factory floor operations: production tracking, quality control, and reporting across 6 Agile sprints. Integrated AI chatbot (LLaMA 3.3 70B via Groq API) and semantic search (Sentence-BERT embeddings).</p>
+          <div class="project-tech">
+            <span>React</span><span>Django REST</span><span>PostgreSQL</span><span>JWT</span><span>Groq API</span>
+          </div>
+          <div class="project-links">
+            <span class="disabled"><i class="fas fa-lock"></i> <span data-i18n="proj-1-link">Private repository &mdash; details on request</span></span>
+          </div>
+        </div>
+
+        <!-- House Price Prediction -->
+        <div class="project-card fade-in">
+          <h3 data-i18n="proj-2-title">House Price Prediction</h3>
+          <p data-i18n="proj-2-desc">Interactive Streamlit app predicting real estate prices using a trained Scikit-Learn regression model.</p>
+          <div class="project-tech">
+            <span>Python</span><span>Scikit-Learn</span><span>Streamlit</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/YoussefMejriCs/housePrice-app" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <!-- Titanic Survival Prediction -->
+        <div class="project-card fade-in">
+          <h3 data-i18n="proj-3-title">Titanic Survival Prediction</h3>
+          <p data-i18n="proj-3-desc">Data cleaning, exploratory data analysis, and a Linear Regression model on the classic Titanic dataset.</p>
+          <div class="project-tech">
+            <span>Python</span><span>Pandas</span><span>Scikit-Learn</span><span>Streamlit</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/YoussefMejriCs/titanic-app" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <!-- Iris Classifier -->
+        <div class="project-card fade-in">
+          <h3 data-i18n="proj-4-title">Iris Classifier (Advanced)</h3>
+          <p data-i18n="proj-4-desc">Classification model project exploring advanced techniques on the Iris dataset.</p>
+          <div class="project-tech">
+            <span>Python</span><span>Scikit-Learn</span><span>Pandas</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/YoussefMejriCs/iris-classifier-advanced" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <!-- Video Game Sales Predictor -->
+        <div class="project-card fade-in">
+          <h3 data-i18n="proj-5-title">Video Game Sales Predictor</h3>
+          <p data-i18n="proj-5-desc">Regression/prediction model estimating video game sales performance from historical data.</p>
+          <div class="project-tech">
+            <span>Python</span><span>Scikit-Learn</span><span>Pandas</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/YoussefMejriCs/video-game-sales-predictor" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <!-- Goutina (Design) -->
+        <div class="project-card fade-in">
+          <div class="project-badges">
+            <span class="project-badge design" data-i18n="proj-badge-design">Design</span>
+          </div>
+          <h3 data-i18n="proj-6-title">Goutina &mdash; Food Delivery Mobile App (UI/UX)</h3>
+          <p data-i18n="proj-6-desc">Complete mobile app prototype: user flows, wireframes, and interactive UI components designed in Figma.</p>
+          <div class="project-tech">
+            <span>Figma</span>
+          </div>
+          <div class="project-links">
+            <span class="project-note">Figma prototype &mdash; case study, details on request</span>
+          </div>
+        </div>
+
+        <!-- NMS Social Network (Design) -->
+        <div class="project-card fade-in">
+          <div class="project-badges">
+            <span class="project-badge design" data-i18n="proj-badge-design">Design</span>
+          </div>
+          <h3 data-i18n="proj-7-title">NMS Social Network &mdash; Product Design</h3>
+          <p data-i18n="proj-7-desc">Designed an anti-exploitation social media platform concept with ethical user reporting and moderation flows.</p>
+          <div class="project-tech">
+            <span>Figma</span>
+          </div>
+          <div class="project-links">
+            <span class="project-note">Figma prototype &mdash; case study, details on request</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="certifications section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label" data-i18n="section-certs-label">Certifications</span>
+        <h2 class="section-title" data-i18n="section-certs-title">Credentials</h2>
+      </div>
+      <div class="cert-list">
+        <div class="cert-item fade-in">
+          <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+          <div class="cert-info">
+            <h4 data-i18n="cert-1-title">Python Data Associate Certification</h4>
+            <p data-i18n="cert-1-detail">DataCamp &mdash; October 2025</p>
+          </div>
+        </div>
+        <div class="cert-item fade-in">
+          <div class="cert-icon"><i class="fas fa-robot"></i></div>
+          <div class="cert-info">
+            <h4 data-i18n="cert-2-title">Associate AI Engineer for Developers</h4>
+            <p data-i18n="cert-2-detail">DataCamp &mdash; In Progress</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label" data-i18n="section-contact-label">Contact</span>
+        <h2 class="section-title" data-i18n="section-contact-title">Let's Work Together</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-form fade-in">
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="form-name" data-i18n="contact-form-name">Name <span class="required">*</span></label>
+              <input type="text" id="form-name" name="name" class="form-input" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="form-email" data-i18n="contact-form-email">Email <span class="required">*</span></label>
+              <input type="email" id="form-email" name="email" class="form-input" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="form-message-text" data-i18n="contact-form-message">Message <span class="required">*</span></label>
+              <textarea id="form-message-text" name="message" class="form-input" required aria-required="true"></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="form-submit" data-i18n="contact-form-send">Send Message</button>
+            <div class="form-message" id="form-message"></div>
+          </form>
+        </div>
+        <div class="contact-info fade-in">
+          <div class="contact-info-card">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <div class="label" data-i18n="contact-email-label">Email</div>
+              <a href="mailto:youssef.mejri.cs@gmail.com">youssef.mejri.cs@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <i class="fas fa-phone"></i>
+            <div>
+              <div class="label" data-i18n="contact-phone-label">Phone</div>
+              <a href="tel:+21650453818">+216 50 453 818</a>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <i class="fab fa-github"></i>
+            <div>
+              <div class="label" data-i18n="contact-github-label">GitHub</div>
+              <a href="https://github.com/YoussefMejriCs" target="_blank" rel="noopener noreferrer">YoussefMejriCs</a>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <i class="fab fa-linkedin-in"></i>
+            <div>
+              <div class="label" data-i18n="contact-linkedin-label">LinkedIn</div>
+              <a href="https://linkedin.com/in/youssef-mejri-cs" target="_blank" rel="noopener noreferrer">youssef-mejri-cs</a>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <div class="label">Location</div>
+              <span data-i18n="contact-location">Tunisia (Tunis / Online)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-nav">
+          <a href="#home" data-i18n="nav-home">Home</a>
+          <a href="#about" data-i18n="nav-about">About</a>
+          <a href="#skills" data-i18n="nav-skills">Skills</a>
+          <a href="#projects" data-i18n="nav-projects">Projects</a>
+          <a href="#certifications" data-i18n="nav-certifications">Certifications</a>
+          <a href="#contact" data-i18n="nav-contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/YoussefMejriCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/youssef-mejri-cs" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:youssef.mejri.cs@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="footer-copy" data-i18n="footer-copy">&copy; 2026 Youssef Mejri. Built with HTML, CSS &amp; JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
